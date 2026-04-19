@@ -1,1 +1,46 @@
+@startuml
 
+' Clase abstracta
+abstract class Empleado {
+    - identificacion : String
+    - nombre : String
+    - edad : int
+    - anioIngreso : int
+    - salarioBasico : double
+
+    + Empleado(id:String, nombre:String, edad:int, anio:int, salario:double)
+    + calcularBonificacion() : double
+    + liquidarNomina() : double
+}
+
+class Vendedor {
+    - totalVentas : double
+    - comision : double
+
+    + Vendedor(id:String, nombre:String, edad:int, anio:int, salario:double, ventas:double)
+    + calcularComision() : double
+    + liquidarNomina() : double
+}
+
+class Repartidor {
+    - numeroRepartos : int
+    - zona : char
+    - valorPorReparto : double
+
+    + Repartidor(id:String, nombre:String, edad:int, anio:int, salario:double, repartos:int, zona:char)
+    - validarZona(zona:char) : char
+    + calcularPagoRepartos() : double
+    + liquidarNomina() : double
+}
+
+class Empresa {
+    + main(args:String[]) : void
+}
+
+' Relaciones
+Empleado <|-- Vendedor
+Empleado <|-- Repartidor
+
+Empresa --> Empleado : usa
+
+@enduml
