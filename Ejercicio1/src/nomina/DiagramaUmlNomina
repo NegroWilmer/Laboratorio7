@@ -2,11 +2,11 @@
 
 ' Clase abstracta
 abstract class Empleado {
-    - identificacion : String
-    - nombre : String
-    - edad : int
-    - anioIngreso : int
-    - salarioBasico : double
+    # identificacion : String
+    # nombre : String
+    # edad : int
+    # anioIngreso : int
+    # salarioBasico : double
 
     + Empleado(id:String, nombre:String, edad:int, anio:int, salario:double)
     + calcularBonificacion() : double
