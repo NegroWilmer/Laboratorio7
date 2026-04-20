@@ -1,0 +1,48 @@
+@startuml
+
+abstract class Producto {
+    # codigo: String
+    # descripcion: String
+    # precioBase: double
+    
+    + Producto(codigo: String, descripcion: String, precioBase: double)
+    {abstract} + calcularPrecioVenta(): double
+    + toString(): String
+}
+
+class ProductoPerecedero {
+    - estadoCaducidad: RangoCaducidad
+    
+    + ProductoPerecedero(codigo: String, descripcion: String, precioBase: double, estado: RangoCaducidad)
+    + calcularPrecioVenta(): double
+    + toString(): String
+}
+
+class ProductoNoPerecedero {
+    - tipo: Calidad
+    
+    + ProductoNoPerecedero(codigo: String, descripcion: String, precioBase: double, tipo: Calidad)
+    + calcularPrecioVenta(): double
+    + toString(): String
+}
+
+enum Calidad {
+    A
+    B
+    C
+}
+
+enum RangoCaducidad {
+    UN_DIA
+    DOS_DIAS
+    TRES_DIAS
+    NORMAL
+}
+
+' Relaciones
+Producto <|-- ProductoPerecedero
+Producto <|-- ProductoNoPerecedero
+ProductoNoPerecedero "1" *-- "1" Calidad
+ProductoPerecedero "1" *-- "1" RangoCaducidad
+
+@enduml
