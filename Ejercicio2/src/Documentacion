@@ -1,0 +1,5 @@
+Esta estructura utiliza una relación de herencia donde ProductoPerecedero y ProductoNoPerecedero extienden de la clase abstracta Producto para aprovechar los atributos base y definir sus propias reglas de precio. 
+Además, el diseño incluye una composición con los enums Calidad y RangoCaducidad, asegurando que cada producto tenga obligatoriamente un estado definido para calcular su valor final. Al usar una clase base abstracta, 
+el sistema garantiza que cualquier nuevo tipo de artículo siga el mismo esquema, permitiendo manejar toda la variedad de productos de forma unificada. 
+
+Todo el modelo está pensado para que la lógica de negocio sea sólida y fácil de ampliar sin complicaciones.
