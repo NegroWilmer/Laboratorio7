@@ -1,46 +1,55 @@
 @startuml
+   abstract class Empleado {
+        
+        # String identificacion
+        # String nombre
+        # int edad
+        # int anioIngreso
+        # double salarioBasico
+        + Empleado(String, String, int, int, double)
+       {abstract} + calcularBonificacion() : double
+       {abstract} + liquidarNomina() : double*
+    }
 
-' Clase abstracta
-abstract class Empleado {
-    # identificacion : String
-    # nombre : String
-    # edad : int
-    # anioIngreso : int
-    # salarioBasico : double
+    class Vendedor {
+        - double totalVentas
+        - double comision
+        - double descuento
+        - double neto
+        + Vendedor(String, String, int, int, double, double)
+        + calcularComision() : double
+        + calcularBonificacion() : double
+        + liquidarNomina() : double
+        + toString() : String
+  }
 
-    + Empleado(id:String, nombre:String, edad:int, anio:int, salario:double)
-    + calcularBonificacion() : double
-    + liquidarNomina() : double
+    class Repartidor {
+        - int numeroRepartos
+        - char zona
+        - double valorPorReparto
+        - double pagoRepartos
+        - double descuento
+        - double neto
+        + Repartidor(String, String, int, int, double, int, char)
+        - validarZona(char) : char
+        + calcularPagoRepartos() : double
+        + calcularBonificacion() : double
+        + liquidarNomina() : double
+        + toString() : String
+    }
+
+    class ArrayList{
+     -ArrayList<Empleado> empleados: Empleado
 }
 
-class Vendedor {
-    - totalVentas : double
-    - comision : double
+    class Empresa {
+        + main(String[] args)$
+    }
 
-    + Vendedor(id:String, nombre:String, edad:int, anio:int, salario:double, ventas:double)
-    + calcularComision() : double
-    + liquidarNomina() : double
-}
-
-class Repartidor {
-    - numeroRepartos : int
-    - zona : char
-    - valorPorReparto : double
-
-    + Repartidor(id:String, nombre:String, edad:int, anio:int, salario:double, repartos:int, zona:char)
-    - validarZona(zona:char) : char
-    + calcularPagoRepartos() : double
-    + liquidarNomina() : double
-}
-
-class Empresa {
-    + main(args:String[]) : void
-}
-
-' Relaciones
-Empleado <|-- Vendedor
-Empleado <|-- Repartidor
-
-Empresa --> Empleado : usa
+    Empleado <|-- Vendedor : Herencia
+    Empleado <|-- Repartidor : Herencia
+    Empresa ..> ArrayList : Usa
+    Empresa ..> Empleado : Usa
+  
 
 @enduml
