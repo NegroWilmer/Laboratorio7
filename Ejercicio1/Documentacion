@@ -1,0 +1,7 @@
+
+
+La estructura se basa en una jerarquía de herencia donde Vendedor y Repartidor heredan de Empleado para no repetir código y definir sus propias reglas de pago mediante polimorfismo. Por otro lado, 
+la clase Empresa tiene una dependencia con ArrayList y Empleado porque los usa como herramientas dentro de su lógica para organizar y procesar a todo el personal. 
+
+Este diseño es clave porque permite que el sistema sea flexible; si mañana decides agregar otro tipo de empleado, solo tienes que extender la clase base sin romper el funcionamiento de la empresa. 
+Básicamente, organizamos los datos comunes arriba y dejamos que cada rol se encargue de sus propios cálculos específicos de nómina.
