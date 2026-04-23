@@ -7,8 +7,8 @@ public class Vendedor extends Empleado {
     private double descuento;
     private double neto;
 
-    public Vendedor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, double totalVentas) {
-        super(identificacion, nombre, edad, anioIngreso, salarioBasico);
+    public Vendedor(String identificacion, String nombre, int edad, int añoIngreso, double salarioBasico, double totalVentas) {
+        super(identificacion, nombre, edad, añoIngreso, salarioBasico);
         this.totalVentas = totalVentas;
         this.comision = 0;
         this.descuento = 0;
@@ -22,7 +22,7 @@ public class Vendedor extends Empleado {
 
     @Override
     public double calcularBonificacion() {
-        int año = java.time.Year.now().getValue() - anioIngreso;
+        int año = java.time.Year.now().getValue() - añoIngreso;
         if (año > 20) return 100000;
         return 0;
     }
@@ -43,7 +43,7 @@ public class Vendedor extends Empleado {
     public String toString() {
         return "Vendedor, Identificación: " + identificacion +
                ", Nombre: " + nombre +
-               ", Año de Ingreso: " + anioIngreso +
+               ", Año de Ingreso: " + añoIngreso +
                ", Salario Básico: " + salarioBasico +
                ", Total Ventas: " + totalVentas +
                ", Valor Comisión: " + comision +
