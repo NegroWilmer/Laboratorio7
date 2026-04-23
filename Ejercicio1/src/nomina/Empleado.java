@@ -4,14 +4,14 @@ public abstract class Empleado {
     protected String identificacion;
     protected String nombre;
     protected int edad;
-    protected int anioIngreso;
+    protected int añoIngreso;
     protected double salarioBasico;
 
-    public Empleado(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico) {
+    public Empleado(String identificacion, String nombre, int edad, int añoIngreso, double salarioBasico) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.edad = edad;
-        this.anioIngreso = anioIngreso;
+        this.añoIngreso = añoIngreso;
         this.salarioBasico = salarioBasico;
     }
 
