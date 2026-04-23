@@ -16,7 +16,7 @@ public abstract class Empleado {
     }
 
     public double calcularBonificacion() {
-        return 0; // Se redefine en las clases hijas
+        return 0;
     }
 
     public abstract double liquidarNomina();
