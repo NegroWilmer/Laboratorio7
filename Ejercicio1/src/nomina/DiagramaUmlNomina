@@ -4,7 +4,7 @@
         # String identificacion
         # String nombre
         # int edad
-        # int anioIngreso
+        # int añoIngreso
         # double salarioBasico
         + Empleado(String, String, int, int, double)
        {abstract} + calcularBonificacion() : double
